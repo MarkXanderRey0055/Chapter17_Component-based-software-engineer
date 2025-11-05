@@ -4,206 +4,205 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chapter17 : Component Based Software Engineer</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="output.css" />
   </head>
   <body>
-    <header class = "main header">
-      <section class="homepage">
-        <h1 class = "title">Chapter 17: Component-based software engineering</h1>
+    <main class="container">
+      <header class="main-header">
+        <h1 class="title">Chapter 17: Component-based software engineering</h1>
+      </header>
 
-        <h4>Objectives</h4>
-        <p>
+      <nav class = "top-nav">
+        <div class ="nav-container">
+          <a href ="landing.html" class ="nav-brand">Software Engineering</a>
+        <div class ="nav-links">
+             <a href = "../17-1.html" class="nav-link">Chapter 17</a>
+             <a href = "../17.2 CBSE processes.html" class="nav-link">Chapter 17.2</a>
+             <a href = "../17.3 Component composition.html" class="nav-link">Chpter 17.3</a>
+        </div>
+        </div>
+      </nav>
+
+
+      <section id="objectives" class="objectives-container">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <p class="objectives-intro">
           The objective of this chapter is to describe an approach to software
           reuse based on the composition of reusable, standardized components.
-          When you have read this chapter you will.
+          When you have read this chapter, you will:
         </p>
 
-        <ul>
+        <ul class="objectives-list">
           <li>
-            know that component based software engineering is concerned with
-            developing standarlized components based on a component, and
-            composing these into application systems:
+            Know that component based software engineering is concerned with
+            developing standardized components based on a component model, and
+            composing these into application systems.
           </li>
           <li>
-            understand what is meant by a component and a componnet model;
+            Understand what is meant by a component and a component model.
           </li>
           <li>
-            know the principal activities in the CBSE process for reuse and the
-            CBSE process with reuse;
+            Know the principal activities in the CBSE process for reuse and the
+            CBSE process with reuse.
           </li>
           <li>
-            undertand some of the difficulties and problems that arise during
-            the process of component compositions
+            Understand some of the difficulties and problems that arise during
+            the process of component compositions.
           </li>
         </ul>
-        <div class="topics">
-        <h2>Contents</h2>
-        <ol>
-          <a href = "17-1.html"<p><strong> 17.1</strong> Components and component models</p></a>
-          <a href ="17.2 CBSE processes.html"<p><strong> 17.2 </strong>CBSE processes</p></a>
-          <a href ="17.3 Component composition.html"<p><strong> 17.3</strong> Component composition</p></a> 
-        </ol>
-        </div>
       </section>
 
-      <section class ="contents">
-
-        <div class="intro">
-        <h4>Chapter 17 ■ Component-based software engineering</h4>
-        <p>
-          As explained in Chapter 16, many new business systems are now
-          developed by configuring off-the-shelf systems. However, when a
-          company cannot use an off-the-shelf system because it does not meet
-          their requirements, the software they need has to be specially
-          developed. For custom software, component-based software engineering
-          is an effective, reuse-oriented way to develop new enterprise systems.
-          Component-based software engineering (CBSE) emerged in the late 1990s
-          as an approach to software systems development based on reusing
-          software components. Its creation was motivated by designers’
-          frustration that object-oriented development had not led to extensive
-          reuse, as had been originally suggested. Single object classes were
-          too detailed and specific, and often had to be bound with an
-          application at compile time. You had to have detailed knowledge of the
-          classes to use them, and this usually meant that you had to have the
-          component source code. This meant that selling or distributing objects
-          as individual reusable components was practically impossible.
-          Components are higher-level abstractions than objects and are defined
-          by their interfaces. They are usually larger than individual objects
-          and all implementation details are hidden from other components. CBSE
-          is the process of defining, implementing, and integrating or composing
-          loosely coupled, independent components into systems. It has become as
-          an important software development approach because software systems
-          are becoming larger and more complex. Customers are demanding more
-          dependable software that is delivered and deployed more quickly. The
-          only way that we can cope with complexity and deliver better software
-          more quickly is to reuse rather than reimplement software components.
-        </p>
+      <section class="content">
+        <div id="introduction" class="intro">
+          <h4>Chapter 17 ■ Component-based software engineering</h4>
+          <p>
+            As explained in Chapter 16, many new business systems are now
+            developed by configuring off-the-shelf systems. However, when a
+            company cannot use an off-the-shelf system because it does not meet
+            their requirements, the software they need has to be specially
+            developed. For custom software, component-based software engineering
+            is an effective, reuse-oriented way to develop new enterprise
+            systems. Component-based software engineering (CBSE) emerged in the
+            late 1990s as an approach to software systems development based on
+            reusing software components. Its creation was motivated by
+            designers' frustration that object-oriented development had not led
+            to extensive reuse, as had been originally suggested. Single object
+            classes were too detailed and specific, and often had to be bound
+            with an application at compile time. You had to have detailed
+            knowledge of the classes to use them, and this usually meant that
+            you had to have the component source code. This meant that selling
+            or distributing objects as individual reusable components was
+            practically impossible. Components are higher-level abstractions
+            than objects and are defined by their interfaces. They are usually
+            larger than individual objects and all implementation details are
+            hidden from other components. CBSE is the process of defining,
+            implementing, and integrating or composing loosely coupled,
+            independent components into systems. It has become as an important
+            software development approach because software systems are becoming
+            larger and more complex. Customers are demanding more dependable
+            software that is delivered and deployed more quickly. The only way
+            that we can cope with complexity and deliver better software more
+            quickly is to reuse rather than reimplement software components.
+          </p>
         </div>
-        <div class="essential">
-        <p>The essentials of component-based software engineering are:</p>
 
-        <ol>
-          <li>
-            Independent components that are completely specified by their
-            interfaces. There should be a clear separation between the component
-            interface and its implementation. This means that one implementation
-            of a component can be replaced by another, without changing other
-            parts of the system.
-          </li>
-          <li>
-            Component standards that facilitate the integration of components.
-            These standards are embodied in a component model. They define, at
-            the very minimum, how component interfaces should be specified and
-            how components communicate. Some models go much further and define
-            interfaces that should be implemented by all conformant components.
-            If components conform to standards, then their operation is
-            independent of their programming language. Components written in
-            different languages can be integrated into the same system.
-          </li>
-          <li>
-            Middleware that provides software support for component integration.
-            To make independent, distributed components work together, you need
-            middleware support that handles component communications. Middleware
-            for component support handles low-level issues efficiently and
-            allows you to focus on application-related problems. In addition,
-            middleware for component support may provide support for resource
-            allocation, transaction management, security, and concurrency
-          </li>
-          <div>
-            A development process that is geared to component-based software
-            engineering. You need a development process that allows requirements
-            to evolve, depending on the functionality of available components. I
-            discuss CBSE development processes in Section 17.2. Component-based
-            development embodies good software engineering practice. It makes
-            sense to design a system using components, even if you have to
-            develop rather than reuse these components.
-          </div>
-          </li>
+        <div class="essential">
+          <p>The essentials of component-based software engineering are:</p>
+          <ol>
+            <li>
+              Independent components that are completely specified by their
+              interfaces. There should be a clear separation between the
+              component interface and its implementation. This means that one
+              implementation of a component can be replaced by another, without
+              changing other parts of the system.
+            </li>
+            <li>
+              Component standards that facilitate the integration of components.
+              These standards are embodied in a component model. They define, at
+              the very minimum, how component interfaces should be specified and
+              how components communicate. Some models go much further and define
+              interfaces that should be implemented by all conformant
+              components. If components conform to standards, then their
+              operation is independent of their programming language. Components
+              written in different languages can be integrated into the same
+              system.
+            </li>
+            <li>
+              Middleware that provides software support for component
+              integration. To make independent, distributed components work
+              together, you need middleware support that handles component
+              communications. Middleware for component support handles low-level
+              issues efficiently and allows you to focus on application-related
+              problems. In addition, middleware for component support may
+              provide support for resource allocation, transaction management,
+              security, and concurrency
+            </li>
+            <li>
+              A development process that is geared to component-based software
+              engineering. You need a development process that allows
+              requirements to evolve, depending on the functionality of
+              available components. I discuss CBSE development processes in
+              Section 17.2. Component-based development embodies good software
+              engineering practice. It makes sense to design a system using
+              components, even if you have to develop rather than reuse these
+              components.
+            </li>
+          </ol>
 
           <div class="components">
-          <p>
-            Underlying CBSE are sound design principles that support the
-            construction of understandable and maintainable software:
-          </p>
-        </ol>
-        <ol>
-          <li>
-            Components are independent so they do not interfere with each
-            other’s operation. Implementation details are hidden. The
-            component’s implementation can be changed without affecting the rest
-            of the system.
-          </li>
-          <li>
-            Components communicate through well-defined interfaces. If these
-            interfaces are maintained, one component can be replaced by another,
-            which provides additional or enhanced functionality.
-          </li>
-          <li>
-            Component infrastructures offer a range of standard services that
-            can be used in application systems. This reduces the amount of new
-            code that has to be developed.
-          </li>
-          <p>
-            The initial motivation for CBSE was the need to support both reuse
-            and distributed software engineering. A component was seen as an
-            element of a software system that could be accessed, using a remote
-            procedure call mechanism, by other components running on separate
-            computers. Each system that reused a component had to incorporate
-            its own copy of that component. This idea of a component extended
-            the notion of distributed objects, as defined in distributed systems
-            models such as the CORBA specification (Pope, 1997). Several
-            different protocols and standards have been developed to support
-            this view of a component, such as Sun’s Enterprise Java Beans (EJB),
-            Microsoft’s COM and .NET, and CORBA’s CCM (Lau and Wang, 2007). In
-            practice, these multiple standards have hindered the uptake of CBSE.
-            It was impossible for components developed using different
-            approaches to work together. Components that are developed for
-            different platforms, such as .NET or J2EE, cannot interoperate.
-            Furthermore, the standards and protocols proposed were complex and
-            difficult to understand. This was also a barrier to their adoption.
-            In response to these problems, the notion of a component as a
-            service was developed, and standards were proposed to support
-            service-oriented software engineering.
-          </p>
-          <p>
-            The most significant difference between a component as a service and
-            the original notion of a component is that services are stand-alone
-            entities that are external to a program using them. When you build a
-            service-oriented system, you reference the external service rather
-            than including a copy of that service in your system.
-            Service-oriented software engineering, which I discuss in Chapter
-            19, is therefore a type of component-based software engineering. It
-            uses a simpler notion of a component than that originally proposed
-            in CBSE. It has been driven, from the outset, by standards. In
-            situations where COTS-based reuse is impractical, service-oriented
-            CBSE is becoming the dominant approach for the development of
-            business systems.
-          </p>
-        </ol>
+            <p>
+              Underlying CBSE are sound design principles that support the
+              construction of understandable and maintainable software:
+            </p>
+            <ol>
+              <li>
+                Components are independent so they do not interfere with each
+                other's operation. Implementation details are hidden. The
+                component's implementation can be changed without affecting the
+                rest of the system.
+              </li>
+              <li>
+                Components communicate through well-defined interfaces. If these
+                interfaces are maintained, one component can be replaced by
+                another, which provides additional or enhanced functionality.
+              </li>
+              <li>
+                Component infrastructures offer a range of standard services
+                that can be used in application systems. This reduces the amount
+                of new code that has to be developed.
+              </li>
+            </ol>
+            <p>
+              The initial motivation for CBSE was the need to support both reuse
+              and distributed software engineering. A component was seen as an
+              element of a software system that could be accessed, using a
+              remote procedure call mechanism, by other components running on
+              separate computers. Each system that reused a component had to
+              incorporate its own copy of that component. This idea of a
+              component extended the notion of distributed objects, as defined
+              in distributed systems models such as the CORBA specification
+              (Pope, 1997). Several different protocols and standards have been
+              developed to support this view of a component, such as Sun's
+              Enterprise Java Beans (EJB), Microsoft's COM and .NET, and CORBA's
+              CCM (Lau and Wang, 2007). In practice, these multiple standards
+              have hindered the uptake of CBSE. It was impossible for components
+              developed using different approaches to work together. Components
+              that are developed for different platforms, such as .NET or J2EE,
+              cannot interoperate. Furthermore, the standards and protocols
+              proposed were complex and difficult to understand. This was also a
+              barrier to their adoption. In response to these problems, the
+              notion of a component as a service was developed, and standards
+              were proposed to support service-oriented software engineering.
+            </p>
+            <p>
+              The most significant difference between a component as a service
+              and the original notion of a component is that services are
+              stand-alone entities that are external to a program using them.
+              When you build a service-oriented system, you reference the
+              external service rather than including a copy of that service in
+              your system. Service-oriented software engineering, which I
+              discuss in Chapter 19, is therefore a type of component-based
+              software engineering. It uses a simpler notion of a component than
+              that originally proposed in CBSE. It has been driven, from the
+              outset, by standards. In situations where COTS-based reuse is
+              impractical, service-oriented CBSE is becoming the dominant
+              approach for the development of business systems.
+            </p>
+          </div>
         </div>
       </section>
-    </header>
 
-
-    <footer>
-      <nav>
-        <div class="title">
-      <h4>Component-based software engineering</h4>
-        </div>
-      <ol>
-          <article>
-          
-          <p><strong> 17.1 </strong>Components and component models</p>
-          <p><strong> 17.2 </strong>CBSE processes</p>
-          <p><strong> 17.3 </strong>Component composition</p>
+      <footer class="footer-container">
+        <nav class="footer-nav">
+          <h4>Chapter Contents</h4>
+          <ul class="footer-links">
+            <li><a href="../17-1.html"><strong>17.1</strong> Components and component models</a></li>
+            <li><a href="../17.2 CBSE processes.html"><strong>17.2</strong> CBSE processes</a></li>
+            <li><a href="../17.3 Component composition.html"><strong>17.3</strong> Component composition</a></li>
+          </ul>
           <p><strong>Created By: Mark Xander B. Rey</strong></p>
-          </article>
-        </ol>
-      </nav>
-      
-</footer>
-
-</section>
-
+        </nav>
+      </footer>
+    </main>
   </body>
 </html>
