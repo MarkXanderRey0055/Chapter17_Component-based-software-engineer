@@ -3,6 +3,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 @import "tailwindcss";
 
+.maris{
+   @apply  bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105 animate-bounce;
+}
+.maris-1{
+    @apply italic mt-6 bg-[#DDF4E7] text-black text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+}
+
+
+.maris-3{
+    @apply   bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105  animate-bounce;
+}
+.maris-4{
+    @apply italic mt-6 bg-[#DDF4E7] text-black text-black text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+
+}
+.maris-6{
+    @apply   bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105  animate-bounce;
+
+}
+.maris-7{
+    @apply italic mt-6  bg-[#DDF4E7] text-black text-black  text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+}
+.maris-9{
+     @apply   bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105  animate-bounce;
+}
+.maris-10{
+     @apply italic mt-6  bg-[#DDF4E7] text-black text-black  text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+}
+
+.maris-12{
+     @apply   bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105  animate-bounce;
+
+}
+.maris-13{
+    @apply italic mt-6 bg-[#DDF4E7] text-black text-black  text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+}
+.maris-14{
+    @apply bg-[#DDF4E7] text-shadow-lg dark:text-shadow-none tracking-normal  mt-6;
+}
+.maris-15{
+     @apply italic mt-6  bg-[#DDF4E7] text-black text-black  text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+}
+
+.maris-16{
+    @apply bg-[#DDF4E7] text-shadow-lg dark:text-shadow-none tracking-normal  mt-6  transform transition hover:-translate-y-1;
+
+}
+.maris-17{
+    @apply italic mt-6  bg-[#DDF4E7] text-black text-black  text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+
+}
+.maris-18{
+    @apply  bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105 mt-6  animate-bounce;
+    
+}
+.maris-19{
+    @apply italic mt-6  bg-[#DDF4E7] text-black text-black  text-left p-6 rounded-lg shadow-lg box-border max-w-5xl mx-auto;
+
+}
+.maris-20{
+     @apply  bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105 mt-6  animate-bounce;
+
+}
+.footer{
+    @apply italic mt-6 text-black text-left p-6 rounded-lg shadow-lg box-border hover:bg-[#DDF4E7] max-w-5xl mx-auto;
+}
+
 @theme {
   /* colors */
   --color-blue: #26667F;

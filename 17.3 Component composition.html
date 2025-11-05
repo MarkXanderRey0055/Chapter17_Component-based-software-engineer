@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Component-based software engineering</title>
+    <link href="./src/output.css" rel="stylesheet">
 </head>
 <body>
 
-    </body>
-</html>
+    
+    <header><h1 class="maris">COMPONENT POSITION</h1></header>
 
-    <header>
-        <font color="Blue">COMPONENT POSITION</font>
-      <p> <article>Component composition is the process of integrating components with each other, and
-with specially written ‘glue code’ to create a system or another component. There are
-several different ways in which you can compose components, as shown in Figure 17.10.
-From left to right these diagrams illustrate sequential composition, hierarchical composition and additive composition. In the discussion below, I assume that you are composing
-two components (A and B) to create a new component:</article></p> 
 
-<ol><p><article>1. Sequential composition is situation (a) in Figure 17.10. You create a new component from 2 existing components by calling the existing components in sequence.
+      <div class="maris-1"> Component composition is the process of integrating components with each other, and
+     with specially written ‘glue code’ to create a system or another component. There are
+     several different ways in which you can compose components, as shown in Figure 17.10.
+      From left to right these diagrams illustrate sequential composition, hierarchical composition and additive composition. In the discussion below, I assume that you are composing
+     two components (A and B) to create a new component:</p>
+    <p>1. Sequential composition is situation (a) in Figure 17.10. You create a new component from 2 existing components by calling the existing components in sequence.
 You can think of the composition as a composition of the ‘provides interfaces’.
 That is, the services offered by component A are called and the results returned
 by A are then used in the call to the services offered by component B. The components do not call each other in sequential composition. Some extra glue code is
@@ -26,28 +25,30 @@ required to call the component services in the right order and to ensure that th
 results delivered by component A are compatible with the inputs expected by
 component B. The ‘provides’ interface of the composition depends on the combined functionality of A and B but will not normally be a composition of their
 ‘provides interfaces’. This type of composition may be used with components
-that are program elements or components that are services.</article></p></ol>
-<ol><p><article>2. Hierarchical composition is situation (b) in Figure 17.10. This type of composition occurs when one component calls directly on the services provided by
+that are program elements or components that are services.</p>
+<p>2. Hierarchical composition is situation (b) in Figure 17.10. This type of composition occurs when one component calls directly on the services provided by
 another component. The called component provides the services that are required
 by the calling component. Therefore, the ‘provides’ interface of the called component must be compatible with the ‘requires’ interface of the calling component.
 Component A calls on component B directly and, if their interfaces match, there
 may be no need for additional code. However, if there is a mismatch between the
 ‘requires’ interface of A and the ‘provides’ interface of B, then some conversion
 code may be required. As services do not have a ‘requires’ interface, this mode of
-composition is not used when components are implemented as web services.</article></p></ol>
-<ol><p><article>3. Additive composition corresponds to situation (c) in Figure 17.10. This occurs
-when two or more components are put together (added) to create a new component,</article></p></ol>
+composition is not used when components are implemented as web services.</p>
+<p>3. Additive composition corresponds to situation (c) in Figure 17.10. This occurs
+when two or more components are put together (added) to create a new component,</p>
+</div>
 
-<center><img src= "1529602317389.jpg" alt="Centered Image"></center>
-<section>Figure 17.10 Types of
-component composition</section>
+<center><img src= "1529602317389.jpg" alt="Centered Image"></center> 
 
-<p><article>which combines their functionality. The ‘provides’ interface and ‘requires’ interface of the new component is a combination of the corresponding interfaces in
+
+<section div class="maris-3">Figure 17.10 Types of
+component composition</section> </div>
+
+<div class="maris-4">
+    <p>which combines their functionality. The ‘provides’ interface and ‘requires’ interface of the new component is a combination of the corresponding interfaces in
 components A and B. The components are called separately through the external
 interface of the composed component. A and B are not dependent and do not call
-each other. This type of composition may be used with components that are program units or components that are services.
-</article></p>
-
+each other. This type of composition may be used with components that are program units or components that are services.</p>
 <p>You might use all the forms of component composition when creating a system.
 In all cases, you may have to write ‘glue code’ that links the components. For example, for sequential composition, the output of component A typically becomes the
 input to component B. You need intermediate statements that call component A, collect the result, and then call component B with that result as a parameter. When one
@@ -59,41 +60,38 @@ system. You can therefore easily compose these components into a single unit.
 However, when components are developed independently for reuse, you will often be
 faced with interface incompatibilities. This means that the interfaces of the components
 that you wish to compose are not the same. Three types of incompatibility can occur:</p>
-
-<ol><p>1. 1. Parameter incompatibility The operations on each side of the interface have the
-same name but their parameter types or the number of parameters are different.</p></ol>
-<ol><p>2.  Operation incompatibility The names  </p></ol>
-<ol><p>3. Operation incompleteness The ‘provides’ interface of a component is a subset
-of the ‘requires’ interface of another component or vice versa.</p></ol>
-
+<p>1. Parameter incompatibility The operations on each side of the interface have the
+same name but their parameter types or the number of parameters are different.</p>
+<p>2.  Operation incompatibility The names  </p>
+<p>3. Operation incompleteness The ‘provides’ interface of a component is a subset
+of the ‘requires’ interface of another component or vice versa.</p>
 <p>In all cases, you tackle the problem of incompatibility by writing an adaptor that
 reconciles the interfaces of the two components being reused. An adaptor component
-converts one interface to another. The precise form of the adaptor depends on the type</p>
+converts one interface to another. The precise form of the adaptor depends on the type</p></div>
 
 <center><img src= "Screenshot 2025-09-03 093836.png" alt="Centered Image"></center>
-<section>Figure 17.11
-Components with
-incompatible interfaces</section>
 
-<p><article>of composition. Sometimes, as in the next example, the adaptor takes a result from one
+<section div class="maris-6">Figure 17.11Components with incompatible interfaces</section></div>
+
+<div class="maris-7"> of composition. Sometimes, as in the next example, the adaptor takes a result from one
 component and converts it into a form where it can be used as an input to another. In
 other cases, the adaptor may be called by component A as a proxy for component B.
 This situation occurs if A wishes to call B but the details of the ‘requires’ interface of
 A do not match the details of the ‘provides’ interface of B. The adaptor reconciles
 these differences by converting its input parameters from A into the required input
-parameters for B. It then calls B to deliver the services required by A.</article></p>
-<p><article>To illustrate adaptors, consider the two components shown in Figure 17.11,
+parameters for B. It then calls B to deliver the services required by A.</p>
+<p>To illustrate adaptors, consider the two components shown in Figure 17.11,
 whose interfaces are incompatible. These might be part of a system used by the
 emergency services. When the emergency operator takes a call, the phone number
 is input to the addressFinder component to locate the address. Then, using the
 mapper component, the operator prints a map to be sent to the vehicle dispatched
 to the emergency. In fact, the components would have more complex interfaces
 than those shown here, but the simplified version illustrates the concept of an
-adaptor.</article></p>
-<p><article>The first component, addressFinder, finds the address that matches a phone number. It can also return the owner of the property associated with the phone number and
+adaptor.</p>
+<p>The first component, addressFinder, finds the address that matches a phone number. It can also return the owner of the property associated with the phone number and
 the type of property. The mapper component takes a post code (in the United States,
 a standard ZIP code with the additional four digits identifying property location) and
-displays or prints a street map of the area around that code at a specified scale.</article></p>
+displays or prints a street map of the area around that code at a specified scale.</p>
 <p>These components are composable in principle because the property location
 includes the post or ZIP code. However, you have to write an adaptor component
 called postCodeStripper that takes the location data from addressFinder and
@@ -101,15 +99,16 @@ strips out the post code. This post code is then used as an input to mapper and 
 street map is displayed at a scale of 1:10,000. The following code, which is an
 example of sequential composition, illustrates the sequence of calls that is required
 to implement this:</p>
-<p><ol>address = addressFinder.location (phonenumber) ;
+<p>address = addressFinder.location (phonenumber) ;
 postCode = postCodeStripper.getPostCode (address) ;
-mapper.displayMap(postCode, 10000) ;</ol></p>
+mapper.displayMap(postCode, 10000) ;</p> 
+</div>
 
 <center><img src= "Screenshot 2025-09-03 095556.png" alt="Centered Image"></center>
-<section>Figure 17.12 An
-adaptor linking a data
-collector and a sensor</section>
-<p>Another case in which an adaptor component may be used is in hierarchical composition, where one component wishes to make use of another but there is an incompatibility between the ‘provides’ interface and ‘requires’ interface of the components
+
+<section div class="maris-9"> Figure 17.12 Anadaptor linking a datacollector and a sensor</section> </div>
+
+<div class="maris-10"> Another case in which an adaptor component may be used is in hierarchical composition, where one component wishes to make use of another but there is an incompatibility between the ‘provides’ interface and ‘requires’ interface of the components
 in the composition. I have illustrated the use of an adaptor in Figure 17.12 where an
 adaptor is used to link a data collector and a sensor component. These could be used
 in the implementation of a wilderness weather station system, as discussed in
@@ -134,14 +133,11 @@ the component documentation whether or not interfaces are compatible. Of
 course, the interface definition includes the operation name and parameter types,
 so you can make some assessment of the compatibility from this. However, you
 depend on the component documentation to decide whether the interfaces are
-semantically compatible.
-</p>
+semantically compatible.</p>
 <p>To illustrate this problem, consider the composition shown in Figure 17.13. These
 components are used to implement a system that downloads images from a digital
 camera and stores them in a photograph library. The system user can provide
-additional information to describe and catalog the photograph. To avoid clutter, </p>
-
-<center><img src= "SScreenshot 2025-09-03 100240.png" alt="Centered Image"></center>
+additional information to describe and catalog the photograph. To avoid clutter. </p>
 
 <p>I have not shown all interface methods here. Rather, I simply show the methods that
 are needed to illustrate the component documentation problem. The methods in the
@@ -168,19 +164,18 @@ information to the informal description.</p>
 <p>   The specification in Figure 17.14 uses pre- and post-conditions that are defined in
 a notation based on the object constraint language (OCL), which is part of the UML
 (Warmer and Kleppe, 2003). OCL is designed to describe constraints in UML object
-models; it allows you to express predicates that must always be true, that must be</p>
+models; it allows you to express predicates that must always be true, that must be</p></div>
 
 
 <center><img src= "Screenshot 2025-09-03 100838.png" alt="Centered Images"></center>
-<section>Figure 17.14 The
-OCL description
-of the Photo Library
-interface
-</section>
-<p>true before a method has executed; and that must be true after a method has executed. These are invariants, pre-conditions, and post-conditions. To access the value
+
+<section div class="maris-12"> Figure 17.14 The OCL description of the Photo Library interface</section></div>
+
+
+<div class="maris-13">true before a method has executed; and that must be true after a method has executed. These are invariants, pre-conditions, and post-conditions. To access the value
 of a variable before an operation, you add @pre after its name. Therefore, using age
 as an example:</p>
-<ol>age = age@pre + 1</ol>
+<p>age = age@pre + 1</p>
      <p>This statement means that the value of age after an operation is one more than it
 was before that operation.</p>
     <p>OCL-based approaches are increasingly used to add semantic information to UML
@@ -191,20 +186,20 @@ suggests that using Design by Contract is essential if we are to develop trusted
 <p>Figure 17.14 includes a specification for the addItem and delete methods in
 Photo Library. The method being specified is indicated by the keyword context and
 the pre- and post-conditions by the keywords pre and post. The pre-conditions for
-addItem state that:</p>
-<ol>1. There must not be a photograph in the library with the same identifier as the
+addItem state that:</p></div>
+<div class="maris-14">1. There must not be a photograph in the library with the same identifier as the
 photograph to be entered.
-</ol>
-<ol>2. The library must exist—assume that creating a library adds a single item to it so
-that the size of a library is always greater than zero.</ol>
-<ol>3. The post-conditions for addItem state that:</ol>
-<ol>The size of the library has increased by 1 (so only a single entry has been made).</ol>
-<ol>If you retrieve using the same identifier, then you get back the photograph
-that you added.</ol>
-<ol>If you look up the catalogue using that identifier, you get back the catalogue
-entry that you made.</ol>
+</p>
+<p>2. The library must exist—assume that creating a library adds a single item to it so
+that the size of a library is always greater than zero.</p>
+<p>3. The post-conditions for addItem state that:</p>
+<p>The size of the library has increased by 1 (so only a single entry has been made).</p>
+<p>If you retrieve using the same identifier, then you get back the photograph
+that you added.</p>
+<p>If you look up the catalogue using that identifier, you get back the catalogue
+entry that you made.</p></div>
 
-<p>The specification of delete provides further information. The pre-condition states
+<div class="maris-15">p>The specification of delete provides further information. The pre-condition states
 that to delete an item, it must be in the library and, after deletion, the photo can no
 longer be retrieved and the size of the library is reduced by 1. However, delete does
 not delete the catalogue entry—you can still retrieve it after the photo has been
@@ -213,14 +208,16 @@ deleted. The reason for this is that you may wish to maintain information in the
 potential conflicts between functional and non-functional requirements, the need to
 deliver a system as quickly as possible and the need to create a system that can
 evolve as requirements change. The decisions where you may have to take trade-offs
-into account are:</p>
-<ol>1. What composition of components is most effective for delivering the functional
-requirements for the system?</ol>
-<ol>2. What composition of the components will make it easier to adapt the composite
-component when its requirements change?</ol>
-<ol>3. What will be the emergent properties of the composed system? These are properties such as performance and dependability. You can only assess these once
-the complete system is implemented.</ol>
-<p>Unfortunately, there are many situations where the solutions to the composition
+into account are:</p></div>
+
+<div class="maris-16">1. What composition of components is most effective for delivering the functional
+requirements for the system?</p>
+<p>2. What composition of the components will make it easier to adapt the composite
+component when its requirements change?</p>
+<p>3. What will be the emergent properties of the composed system? These are properties such as performance and dependability. You can only assess these once
+the complete system is implemented.</p></div>
+
+<div class="maris-17">Unfortunately, there are many situations where the solutions to the composition
 problems may conflict. For example, consider a situation such as that illustrated in
 Figure 17.15, where a system can be created through two alternative compositions.
 The system is a data collection and reporting system where data is collected from
@@ -234,146 +231,45 @@ system could be replaced and, if reports are required that the current reporting
 change the data management component.</p>
 <p>In composition (b), a database component with built-in reporting facilities (e.g.,
 Microsoft Access) is used. The key advantage of composition (b) is that there are fewer
-components, so this will be a faster implementation because there are no component</p>
+components, so this will be a faster implementation because there are no component.</p> </div>
 
-<section>Figure 17.15 Data
-collection and report
-generation components</section>
+<section div class="maris-18"> Figure 17.15 Data collection and report generation components</section></div>
+
 <center><img src= "Screenshot 2025-09-03 101739.png" alt="Centered Images"></center>
-<p>communication overheads. Furthermore, data integrity rules that apply to the database
+
+<div class="maris-19">communication overheads. Furthermore, data integrity rules that apply to the database
 will also apply to reports. These reports will not be able to combine data in incorrect
 ways. In composition (a), there are no such constraints so errors in reports could occur.</p>
 <p>In general, a good composition principle to follow is the principle of separation of
 concerns. That is, you should try to design your system in such a way that each component has a clearly defined role and that, ideally, these roles should not overlap.
 However, it may be cheaper to buy one multi-functional component rather than two
-or three separate components. Furthermore, there may be dependability or performance penalties when multiple components are used.</p>
-
-<font color="Blue">K E Y P O I N T S</font>
-<ol>
-
-
-    <li>Component-based software engineering is a reuse-based approach to defining, implementing,
-and composing loosely coupled independent components into systems.
-</li>
-</ol>
-
-<ol>
-
-
-    <li>A component is a software unit whose functionality and dependencies are completely defined by
-a set of public interfaces. Components can be composed with other components without
-knowledge of their implementation and can be deployed as an executable unit.</li>
-</ol>
-<ol>
-
-
-    <li>Components may be implemented as program units that are included in a system or as external
-services that are referenced from within a system.</li>
-</ol>
-<ol>
-
-
-    <li>A component model defines a set of standards for components, including interface standards,
-usage standards, and deployment standards. The implementation of the component model
-provides a set of common services that may be used by all components.</li>
-</ol>
-<ol>
-
-
-    <li>During the CBSE process, you have to interleave the processes of requirements engineering and
-system design. You have to trade off desirable requirements against the services that are
-available from existing reusable components.</li>
-</ol>
-<ol>
-
-
-    <li>Component composition is the process of ‘wiring’ components together to create a system.
-Types of composition include sequential composition, hierarchical composition, and additive
-composition.</li>
-</ol>
-<ol>
-
-
-    <li>When composing reusable components that have not been written for your application, you
-may need to write adaptors or ‘glue code’ to reconcile the different component interfaces.</li>
-</ol>
-<ol>
-
-
-    <li>When choosing compositions, you have to consider the required functionality of the system,
-the non-functional requirements and the ease with which one component can be replaced when
-the system is changed.</li>
-</ol>
-
-
-<font color="Blue">F U RT H E R R E A D I N G</font>
-<p>Component-based Software Engineering: Putting the Pieces Together. This book is a collection of
-papers from various authors on different aspects of CBSE. Like all collections, it is rather mixed but
-it has better coverage of general issues of software engineering with components than Szyperski’s
-book. (G. T. Heineman and W. T. Councill, Addison-Wesley, 2001.)</p>
-<p>Component Software: Beyond Object-Oriented Programming, 2nd ed. This updated edition of the
-first book on CBSE covers technical and nontechnical issues in CBSE. It has more detail on specific
-technologies than Heineman and Councill’s book and includes a thorough discussion of market
-issues. (C. Szyperski, Addison-Wesley, 2002.)</p>
-<p>‘Specification, Implementation and Deployment of Components’. A good introduction to the
-fundamentals of CBSE. The same issue of the CACM includes articles on components and
-component-based development. (I. Crnkovic, B. Hnich, T. Jonsson and Z. Kiziltan, Comm. ACM,
-45 (10), October 2002.) http://dx.doi.org/10.1145/570907.570928</p>
-<p>‘Software Component Models’. This is a comprehensive discussion of commercial and research
-component models that classifies these models and explains the differences between them. (K-K.
-Lau and Z. Wang, IEEE Transactions on Software Engineering, 33 (10), October 2007.)
-http://dx.doi.org/10.1109/TSE.2007.70726.</p>
+or three separate components. Furthermore, there may be dependability or performance penalties when multiple components are used.</p></div>
 
 
 
 
-<font color="Blue">E X E R C I S E S</font>
-<p> 17.3 What are the fundamental differences between components as program elements and
-components as services?</p>
-<p>17.4. Why is it important that components should be based on a standard component model?</p>
-<p>17.5. Using an example of a component that implements an abstract data type such as a stack or a
-list, show why it is usually necessary to extend and adapt components for reuse.</p>
-<p>17.6. Explain why it is difficult to validate a reusable component without the component source
-code. In what ways would a formal component specification simplify the problems of
-validation?</p>
-<p>17.7. Design the ‘provides’ interface and the ‘requires’ interface of a reusable component that may
-be used to represent a patient in the MHC-PMS.</p>
-<p>17.8. Using examples, illustrate the different types of adaptor needed to support sequential
-composition, hierarchical composition, and additive composition.</p>
-<p>17.9. Design the interfaces of components that might be used in a system for an emergency
-control room. You should design interfaces for a call-logging component that records calls
-made, and a vehicle discovery component that, given a post code (zip code) and an incident
-type, finds the nearest suitable vehicle to be despatched to the incident.</p>
-<p>17.10. It has been suggested that an independent certification authority should be established.
-Vendors would submit their components to this authority, which would validate that the
-component was trustworthy. What would be the advantages and disadvantages of such a
-certification authority?</p>
 
-<font color="Blue">R E F E R E N C E S</font>
-<p>Boehm, B. W., Abts, C., Brown, A. W., Chulani, S., Clark, B. K., Horowitz, E., Madachy, R., Reifer, D. and
-Steece, B. (2000). Software Cost Estimation with COCOMO II. Upper Saddle River, NJ.: Prentice Hall.</p>
-<p>Councill, W. T. and Heineman, G. T. (2001). ‘Definition of a Software Component and its Elements’. In
-Component-based Software Engineering. Heineman, G. T. and Councill, W. T. (ed.). Boston: AddisonWesley, 5–20.</p>
-<p>Jacobson, I., Griss, M. and Jonsson, P. (1997). Software Reuse. Reading, Mass.: Addison-Wesley.</p>
-<p>Kotonya, G. (2003). ‘The CBSE Process: Issues and Future Visions’. Proc. 2nd CBSEnet workshop,
-Budapest, Hungary.</p>
-<p>Lau, K.-K. and Wang, Z. (2007). ‘Software Component Models’. IEEE Trans. on Software Eng., 33 (10),
-709–24</p>
-<p>Meyer, B. (1992). ‘Design by Contract’. IEEE Computer, 25 (10), 40–51.</p>
-<p>Meyer, B. (2003). ‘The Grand Challenge of Trusted Components’. ICSE 25: Int. Conf. on Software Eng.,
-Portland, Oregon: IEEE Press. </p>
-<p>Mili, H., Mili, A., Yacoub, S. and Addy, E. (2002). Reuse-based Software Engineering. New York: John
-Wiley & Sons.</p>
-<p>Pope, A. (1997). The CORBA Reference Guide: Understanding the Common Object Request Broker
-Architecture. Harlow, UK: Addison-Wesley.</p>
-<p>Szyperski, C. (2002). Component Software: Beyond Object-oriented Programming, 2nd ed. Harlow,
-UK: Addison-Wesley.Szyperski, C. (2002). Component Software: Beyond Object-oriented Programming, 2nd ed. Harlow,
-UK: Addison-Wesley.</p>
-<p>Warmer, J. and Kleppe, A. (2003). The Object Constraint Language: Getting your models ready for
-MDA. Boston: Addison-Wesley.</p>
-<p>Weinreich, R. and Sametinger, J. (2001). ‘Component Models and Component Services: Concepts and
-Principles’. In Component-Based Software Engineering. Heineman, G. T. and Councill, W. T. (ed.).
-Boston: Addison-Wesley, 33–48.</p>
+
+
+
+
+
+<footer> 
+    <div class="maris-20"> R E F E R E N C E S</h1></div>
+    
+     <div class="footer">Mili, H., Mili, A., Yacoub, S. and Addy, E. (2002). Reuse-based Software Engineering. New York: John
+      Wiley & Sons.</p>
+     <p>Pope, A. (1997). The CORBA Reference Guide: Understanding the Common Object Request Broker
+      Architecture. Harlow, UK: Addison-Wesley.</p>
+     <p>Szyperski, C. (2002). Component Software: Beyond Object-oriented Programming, 2nd ed. Harlow,
+     UK: Addison-Wesley.Szyperski, C. (2002). Component Software: Beyond Object-oriented Programming, 2nd ed. Harlow,
+     UK: Addison-Wesley.</p>
+     <p>Warmer, J. and Kleppe, A. (2003). The Object Constraint Language: Getting your models ready for
+     MDA. Boston: Addison-Wesley.</p>
+     <p>Weinreich, R. and Sametinger, J. (2001). ‘Component Models and Component Services: Concepts and
+     Principles’. In Component-Based Software Engineering. Heineman, G. T. and Councill, W. T. (ed.).
+     Boston: Addison-Wesley, 33–48.</p></div>
+</footer>
 
 
 
