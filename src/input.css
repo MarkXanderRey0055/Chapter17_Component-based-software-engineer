@@ -5,13 +5,13 @@
 
 @theme {
   /* colors */
-  --color-blue: #26667f;
-  --color-mint-green: #ddf4e7;
-  --color-white: #ffffff;
+  --color-blue: #26667F;
+  --color-mint-green: #DDF4E7;
+  --color-white: #FFFFFF;
   --color-dark-blue: #124170;
-  --color-green: #67c090;
-
-  /* font */
+  --color-green: #67C090;
+  
+ /* font */
   --font-main: "Red Hat Display", sans-serif;
   --font-dancing: "Dancing Script", cursive;
   --font-lexend: "Lexend Deca", sans-serif;
@@ -20,6 +20,119 @@
   --animate-slide-in-right: slideInRight 0.8s ease-out forwards;
   --animate-card-pop: cardPop 0.6s ease-out forwards;
   --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+}
+
+@theme {
+  --animate-wiggle: wiggle 2s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+}
+
+.loyd_p{
+  @apply indent-8 m-1;
+}
+
+.loyd_main{
+  @apply bg-mint-green text-base/8 leading-8 font-main p-10 text-base lg:text-lg xl:text-xl text-justify text-shadow-2xs;
+}
+
+.loyd_header{
+  @apply bg-blue
+}
+
+.loyd_nav{
+  @apply p-2 flex flex-wrap
+}
+
+.loyd_grid{
+  @apply p-1 m-1 grid xl:grid-cols-14 xl:gap-4 lg:grid-cols-8 lg:gap-4 md:grid-cols-8 md:gap-2 grid-cols-4 gap-1
+}
+
+.loyd_gridChild{
+  @apply p-2 m-2 text-center text-white border-solid border-1 rounded-xl hover:bg-[#1C4D61] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 cursor-pointer 
+}
+
+.loyd_title{
+  @apply font-dancing md:scale-100 text-white font-bold p-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl cursor-pointer;
+}
+
+.loyd_content{
+  @apply bg-white p-10 rounded-lg my-10 lg:p-15 lg:m-10 xl:p-12 xl:m-12 shadow-xl;
+}
+
+.loyd_img{
+  @apply flex flex-wrap scale-100 xl:scale-100 lg:hover:animate-wiggle xl:hover:animate-wiggle justify-center gap-4 rounded-xl my-3 cursor-not-allowed;
+}
+
+.loyd_underline{
+  @apply underline;
+}
+
+.loyd_subH{
+  @apply m-2 text-xs lg:text-sm xl:text-base;
+}
+
+.loyd_footer{
+  @apply bg-green text-white font-lexend p-5 text-sm lg:text-base xl:text-lg;
+}
+
+.loyd_footerP{
+  @apply font-bold text-[15px] lg:text-center xl:text-center;
+}
+
+
+
+
+body, .loyd_content, .loyd_header, .loyd_footer {
+  @apply transition-colors duration-500 ease-in-out;
+}
+
+@media (prefers-color-scheme: light) {
+  body,
+  .loyd_main {
+    background-color: #0F172A;
+    color: #E2E8F0;
+  }
+
+  .loyd_header {
+    background-color: #0B3149;
+  }
+
+  .loyd_content {
+    background-color: #1E293B;
+    color: #E2E8F0;
+  }
+
+  .loyd_footer {
+    background-color: #134E4A;
+    color: #F8FAFC;
+  }
+
+  .loyd_gridChild {
+    background-color: transparent;
+    border-color: #E2E8F0;
+  }
+
+  .loyd_gridChild:hover {
+    background-color: #0D2731;
+  }
+
+  a {
+    color: #67C090;
+  }
+
+  img {
+    filter: brightness(0.85) contrast(1.05);
+  }
+}
+  
 
   @keyframes slideInRight {
     from {
@@ -53,7 +166,7 @@
       opacity: 1;
     }
   }
-}
+
 /* color changing */
 @keyframes flowGradient {
   0%, 100% { background-position: 0% 50%; }
