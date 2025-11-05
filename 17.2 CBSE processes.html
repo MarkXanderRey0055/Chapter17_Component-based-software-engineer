@@ -1,241 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="eliza">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBSE Processes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 17 Component-Based Software Engineering</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./src/output.css">
 </head>
-</html>
 <body>
-   </header>CBSE processes
-CBSE processes are software processes that support component-based software engineering. They take into account the possibilities of reuse and the different process
-activities involved in developing and using reusable components. Figure 17.6
-(Kotonya, 2003) presents an overview of the processes in CBSE. At the highest level,
-there are two types of CBSE processes:</header>
 
-</ol></P>1. Development for reuse This process is concerned with developing components
-or services that will be reused in other applications. It usually involves generalizing existing components.</ol><</p>
-</ol></p>2. Development with reuse This is the process of developing new applications
-using existing components and services.</ol></p>
+<header>
+  <h1>Chapter 17: Component-Based Software Engineering</h1>
+</header>
 
-</p>These processes have different objectives and therefore, include different activities. In the development for reuse process, the objective is to produce one or more
-reusable components. You know the components that you will be working with and
-you have access to their source code to generalize them. In development with reuse,
-you don’t know what components are available, so you need to discover these components and design your system to make the most effective use of them. You may not
-have access to the component source code.</P>
+<section class="container">
 
-</ol></p>1. Component acquisition is the process of acquiring components for reuse or development into a reusable component. It may involve accessing locally developed
-components or services or finding these components from an external source.</ol></P>
-</ol></P>2. Component management is concerned with managing a company’s reusable
-components, ensuring that they are properly cataloged, stored, and made available for reuse.</ol></P>
+  <!-- Flip Card 1 -->
+  <div class="flip-card" id="card1">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>CBSE Processes Overview</h3>
+        <p>
+          CBSE processes are software processes that support component-based software engineering.
+          They take into account the possibilities of reuse and the different process activities involved
+          in developing and using reusable componentss.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p>
+          Figure 17.6 (Kotonya, 2003) presents an overview of the processes in CBSE.
+          At the highest level, there are two types of CBSE processes:
+        </p>
+        <ol start="1">
+          <li><strong>Development for reuse</strong> — concerned with developing components or services that will be reused in other applications. It usually involves generalizing existing components.</li>
+          <li><strong>Development with reuse</strong> — the process of developing new applications using existing components and services.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 
+  <!-- Flip Card 2 -->
+  <div class="flip-card" id="card2">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Process Objectives</h3>
+        <p>
+          These processes have different objectives and therefore include different activities.
+          In the development for reuse process, the objective is to produce one or more reusable components.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p>
+          You know the components that you will be working with and you have access to their source code
+          to generalize them. In development with reuse, you don’t know what components are available,
+          so you need to discover these components and design your system to make the most effective use
+          of them. You may not have access to the component source code.
+        </p>
+      </div>
+    </div>
+  </div>
 
+  <!-- Flip Card 3 -->
+  <div class="flip-card" id="card3">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Component Acquisition</h3>
+        <p>
+          Component acquisition is the process of acquiring components for reuse or development into a reusable component.
+          It may involve accessing locally developed components or services or finding these components from an external source.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>1️⃣ Component acquisition</strong> — ensures software engineers can identify, evaluate, and obtain reusable
+          components either from within the organization or third-party vendors, making it easier to integrate them into new systems.</p>
+      </div>
+    </div>
+  </div>
 
-</section> Chapter 17 Component-based software engineering</section>
-</section>figure 17.6 CBSE processes</section>
+  <!-- Flip Card 4 -->
+  <div class="flip-card" id="card4">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Component Management</h3>
+        <p>
+          Component management is concerned with managing a company’s reusable components,
+          ensuring that they are properly cataloged, stored, and made available for reuse.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>2️⃣ Component management</strong> — maintains an organized repository of reusable components.
+          It ensures they are documented, version-controlled, and accessible for developers to use in future projects.</p>
+      </div>
+    </div>
+  </div>
 
-<section >
-<center><img src="Annotation 2025-09-03 113250.png" alt="Centered Image"></center>
+  <!-- Flip Card 5 -->
+  <div class="flip-card" id="card5">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>CBSE for Reuse</h3>
+        <p>
+          CBSE for reuse is the process of developing reusable components and making them available
+          for reuse through a component management system.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p>
+          The vision of early CBSE supporters was that a thriving component marketplace would develop,
+          with specialist component providers and vendors organizing the sale of components.
+          However, this vision has not been realized yet.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flip Card 6 -->
+  <div class="flip-card" id="card6">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Organizational Reuse</h3>
+        <p>
+          CBSE for reuse is most likely to take place within an organization committed to reuse-driven software engineering.
+          They wish to exploit software assets from different parts of the company.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p>
+          However, internally developed components are not usually reusable without change.
+          They often include application-specific features that limit reuse in other systems.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flip Card 7 -->
+  <div class="flip-card" id="card7">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Adapting Components</h3>
+        <p>
+          To make components reusable, you must adapt and extend them to create more generic versions.
+          This adaptation has associated costs, so cost-effectiveness must be evaluated.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p>
+          You must decide if a component is likely to be reused and whether the savings justify the costs of making it reusable.
+          Stable domain abstractions, like “accounts” or “patients,” are good reuse candidates.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flip Card 8 -->
+  <div class="flip-card" id="card8">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Improving Reusability</h3>
+        <p>
+          Changes made to improve reusability include removing application-specific methods,
+          renaming functions, and adding more general functionality.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <ul>
+          <li>Remove app-specific methods</li>
+          <li>Change names for general use</li>
+          <li>Add methods for full coverage</li>
+          <li>Ensure consistent exception handling</li>
+          <li>Add configuration interfaces</li>
+          <li>Integrate and generalize interfaces</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flip Card 9 -->
+  <div class="flip-card" id="card9">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>Exception Handling</h3>
+        <p>
+          Exception handling is a particularly difficult aspect.
+          Components should not handle exceptions themselves, as each application has different requirements.
+        </p>
+      </div>
+      <div class="flip-card-back">
+        <p>
+          Instead, the component should define what exceptions can arise and publish these as part of the interface.
+          For example, a stack component should detect and publish stack overflow and underflow exceptions.
+        </p>
+      </div>
+    </div>
+  </div>
+
 </section>
-</ol></p>3. Component certification is the process of checking a component and certifying
-that it meets its specification. </P>  Components maintained by an organization may be stored in a component repository that includes both the components and information about their use.</P>
-</section> 17.2 CBSE for reuse</section> </p>CBSE for reuse is the process of developing reusable components and making them
-available for reuse through a component management system. The vision of early
-supporters of CBSE (Szyperski, 2002) was that a thriving component marketplace
-would develop. There would be specialist component providers and component vendors who would organize the sale of components from different developers.
-Software developers would buy components to include in a system or pay for services as they were used. However, this vision has not been realized. There are relatively few component suppliers and buying components is uncommon. At the time
-of writing, the service market is also undeveloped although there are predictions that
-it will expand significantly over the next few years.</P>
-</P> Consequently, CBSE for reuse is most likely to take place within an organization
-that has made a commitment to reuse-driven software engineering. They wish to
-exploit the software assets that have been developed in different parts of the company. However, these internally developed components are not usually reusable
-without change. They often include application-specific features and interfaces that
-are unlikely to be required in other programs where the component is reused.</P>
-</p>To make components reusable, you have to adapt and extend the applicationspecific components to create more generic and therefore more reusable versions.
-Obviously, this adaptation has an associated cost. Thus you have to decide first,
-whether a component is likely to be reused and second, whether the cost savings
-from future reuse justify the costs of making the component reusable.</p>
-</P>To answer the first of these questions, you have to decide whether or not the component implements one or more stable domain abstractions. Stable domain abstractions are fundamental elements of the application domain that change slowly. For
-example, in a banking system, domain abstractions might include accounts, account
-holders, and statements. In a hospital management system, domain abstractions
-might include patients, treatments, and nurses. These domain abstractions are sometimes called ‘business objects’. If the component is an implementation of a commonly used domain abstraction or group of related business objects, it can probably
-be reused.</p>
-</p> To answer the question about the cost effectiveness, you have to assess the costs
-of changes that are required to make the component reusable. These costs are the
-costs of component documentation, component validation, and making the component more generic. Changes that you may make to a component to make it more
-reusable include:</p>
-</ul>
-</li> removing application-specific methods;</li>
-</li> changing names to make them more general;</li>
-</li> g• adding methods to provide more complete functional coverage;</li>
-</li> making exception handling consistent for all methods;
-</li>adding a ‘configuration’ interface to allow the component to be adapted to different situations of use;</li>
-</li>integrating required components to increase independence.eneralizing interfaces;</li>
-</p>The problem of exception handling is a particularly difficult one. Components
-should not handle exceptions themselves, because each application will have its own
-requirements for exception handling. Rather, the component should define what
-exceptions can arise and should publish these as part of the interface. For example, a
-simple component implementing a stack data structure should detect and publish
-stack overflow and stack underflow exceptions. In practice, however, there are two
-problems with this:</p>
-</ol></p>1. Publishing all exceptions leads to bloated interfaces that are harder to understand. This may put off potential users of the component.</ol></p>
-</ol></p>2. The operation of the component may depend on local exception handling,
-and changing this may have serious implications for the functionality of the
-component.</ol></p>
-</section>Chapter 17 Component-based software engineering<section>
-</P>Mili et al. (2002) discuss ways of estimating the costs of making a component
-reusable and the returns from that investment. The benefits of reusing rather than
-redeveloping a component are not simply productivity gains. There are also quality
-gains, because a reused component should be more dependable, and time-to-market
-gains. These are the increased returns that accrue from deploying the software more
-quickly. Mili et al. present various formulas for estimating these gains, as does
-the COCOMO model discussed in Chapter 23 (Boehm, et al., 2000). However, the
-parameters of these formulas are difficult to estimate accurately, and the formulas
-must be adapted to local circumstances, making them difficult to use. I suspect that
-few software project managers use these models to estimate the return on investment
-from component reusability.</P>
-</P>Obviously, whether or not a component is reusable depends on its application
-domain and functionality. As you add generality to a component, you increase its
-reusability. However, this normally means that the component has more operations
-and is more complex, which makes the component harder to understand and use.</P>
-</P>There is, therefore, an inevitable trade-off between reusability and usability of a
-component. To make a component reusable you have to provide a set of generic
-interfaces with operations that cater to all of the ways in which the component could
-be used. Making the component usable means providing a simple, minimal interface
-that is easy to understand. Reusability adds complexity and hence reduces component understandability. It is therefore more difficult to decide when and how to reuse
-that component. When designing a reusable component, you must, therefore, find a
-compromise between generality and understandability.</P>
-</P>A potential source of components is existing legacy systems. As I discussed in
-Chapter 9, these are systems that fulfill an important business function but are written using obsolete software technologies. Because of this, it may be difficult to use
-them with new systems. However, if you convert these old systems to components,
-their functionality can be reused in new applications.</P>
-</P>Of course, these legacy systems do not normally have clearly defined ‘requires’
-and ‘provides’ interfaces. To make these components reusable, you have to create a
-wrapper that defines the component interfaces. The wrapper hides the complexity of
-the underlying code and provides an interface for external components to access services that are provided. Although this wrapper is a fairly complex piece of software,
-the cost of wrapper development is often much less than the cost of reimplementing
-the legacy system. I discuss this approach in more detail in Chapter 19, where
-I explain how the features in a legacy system can be accessed through services.</P>
-</P>Once you have developed and tested a reusable component or service, this then
-has to be managed for future reuse. Management involves deciding how to classify
-the component so that it can be discovered, making the component available either in
-a repository or as a service, maintaining information about the use of the component
-and keeping track of different component versions. If the component is open source,
-you may make it available in a publ ic repository such as Sourceforge. If it is intended
-for use in a company, then you may use an internal repository system.</P>
-</P>A company with a reuse program may carry out some form of component certification before the component is made available for reuse. Certification means that</P>
-</section>figure 17.7 CBSE with reuse</section>
 
-<center><img src="Annotation 2026-09-03 113941.png" alt="Centered Image"></center>
+<footer>
+  <h4>Chapter Contents</h4>
+  <ul>
+    <li><strong>17.1</strong> Components and Component Models</li>
+    <li><strong>17.2</strong> CBSE Processes</li>
+    <li><strong>17.3</strong> Component Composition</li>
+  </ul>
+  <p>Created by: <strong>Eliza T. De Roxas</strong></p>
+</footer>
 
-</P>someone apart from the developer checks the quality of the component. They test the
-component and certify that it has reached an acceptable quality standard, before it is
-made available for reuse. However, this can be an expensive process and many companies simply leave testing and quality checking to the component developers.</P>
-</section> 17.2.2 CBSE with reuse </section>
-</P>The successful reuse of components requires a development process tailored to
-CBSE. The CBSE with reuse process has to include activities that find and integrate
-reusable components. The structure of such a process was discussed in Chapter 2
-and Figure 17.7 shows the principal activities within that process. Some of the
-activities within this process, such as the initial discovery of user requirements, are
-carried out in the same way as in other software processes. However, the essential
-differences between CBSE with reuse and software processes for original software
-development are:</P>
-</ol></P>1. The user requirements are initially developed in outline rather than in detail, and
-stakeholders are encouraged to be as flexible as possible in defining their
-requirements. Requirements that are too specific limit the number of components that could meet these requirements. However, unlike incremental development, you need a complete set of requirements so that you can identify as many
-components as possible for reuse.</ol></P>
-</ol></P>2. Requirements are refined and modified early in the process depending on the
-components available. If the user requirements cannot be satisfied from available components, you should discuss the related requirements that can be supported. Users may be willing to change their minds if this means cheaper or
-quicker system delivery.</ol></P>
-</ol></P>3. There is a further component search and design refinement activity after the system architecture has been designed. Some apparently usable components may
-turn out to be unsuitable or do not work properly with other chosen components.
-Although not shown in Figure 17.7, this implies that further requirements
-changes may be necessary.</ol></P>
-<section>Chapter 17 Component-based software engineering</section>
-<section>Figure 17.8 The component identification process</section>
-
-<center><img src="Annotation 2025-09-03 1142055.png" alt="Centered Image"></center>
-
-</P>4. Development is a composition process where the discovered components are
-integrated. This involves integrating the components with the component model
-infrastructure and, often, developing adaptors that reconcile the interfaces
-of incompatible components. Of course, additional functionality may also be
-required over and above that provided by reused components.</P>
-</P>The architectural design stage is particularly important. Jacobson et al. (1997)
-found that defining a robust architecture is critical for successful reuse. During the
-architectural design activity, you may choose a component model and implementation platform. However, many companies have a standard development platform
-(e.g., .NET) so the component model is pre-determined. As I discussed in Chapter 6,
-you also establish the high-level organization of the system at this stage and make
-decisions about system distribution and control.</P>
-</P>An activity that is unique to the CBSE process is identifying candidate components or services for reuse. This involves a number of subactivities, as shown in
-Figure 17.8. Initially, your focus should be on search and selection. You need to convince yourself that there are components available to meet your requirements.
-Obviously, you should do some initial checking that the component is suitable but
-detailed testing may not be required. In the later stage, after the system architecture
-has been designed, you should spend more time on component validation. You need
-to be confident that the identified components are really suited to your application; if
-not, then you have to repeat the search and selection processes.</P>
-</P>The first step in identifying components is to look for components that are available locally or from trusted suppliers. As I said in the previous section, there are relatively few component vendors so you are therefore most likely to be looking for
-components that have been developed in your own company. Software development
-companies can build their own database of reusable components without the risks
-inherent in using components from external suppliers. Alternatively, you may decide
-to search code libraries available on the Web, such as Sourceforge or Google Code,
-to see if source code for the component that you need is available. If you are looking
-for services, then there are a number of specialized web search engines available that
-can discover public web services.</P>
-</P>Once the component search process has identified possible components, you have
-to select candidate components for assessment. In some cases, this will be a straightforward task. Components on the list will directly implement the user requirements
-and there will not be competing components that match these requirements. In other
-cases, however, the selection process is much more complex. There will not be a clear
-mapping of requirements onto components and you may find that several components
-have to be integrated to meet a specific requirement or group of requirements.</P>
-</P>The Ariane 5 launcher Failure
-While developing the Ariane 5 space launcher, the designers decided to reuse the inertial reference software
-that had performed successfully in the Ariane 4 launcher. The inertial reference software maintains the stability
-of the rocket. They decided to reuse this without change (as you would do with components), although it
-included additional functionality that was not required in Ariane 5.
-In the first launch of Ariane 5, the inertial navigation software failed and the rocket could not be controlled.
-Ground controllers instructed the launcher to self-destruct and the rocket and its payload were destroyed. The
-cause of the problem was an unhandled exception when a conversion of a fixed-point number to an integer
-resulted in a numeric overflow. This caused the run-time system to shut down the inertial reference system and
-launcher stability could not be maintained. The fault had never occurred in Ariane 4 because it had less
-powerful engines and the value that was converted could not be large enough for the conversion to overflow.
-The fault occurred in code that was not required for Ariane 5. The validation tests for the reused software were
-based on Ariane 5 requirements. Because there were no requirements for the function that failed, no tests were
-developed. Consequently, the problem with the software was never discovered during launch simulation tests.</P>
-<section>Figure 17.9 An example of validation failure with reused software</section>
-</P>You, therefore, have to decide which component compositions provide the best coverage of the requirements.</P>
-</P>Once you have selected components for possible inclusion in a system, you
-should then validate them to check that they behave as advertised. The extent of the
-validation required depends on the source of the components. If you are using a
-component that has been developed by a known and trusted source, you may decide
-that component testing is unnecessary. You simply test the component when it is
-integrated with other components. On the other hand, if you are using a component
-from an unknown source, you should always check and test that component before
-including it in your system.</P>
-</P>Component validation involves developing a set of test cases for a component (or,
-possibly, extending test cases supplied with that component) and developing a test
-harness to run component tests. The major problem with component validation is
-that the component specification may not be sufficiently detailed to allow you to
-develop a complete set of component tests. Components are usually specified informally, with the only formal documentation being their interface specification. This
-may not include enough information for you to develop a complete set of tests that
-would convince you that the component’s advertised interface is what you require.</P>
-</P>As well as testing that a component for reuse does what you require, you may also
-have to check that the component does not include any malicious code or functionality that you don’t need. Professional developers rarely use components from
-untrusted sources, especially if these sources do not provide source code. Therefore,
-the malicious code problem does not usually arise. However, components may often
-contain functionality that you don’t need and you have to check that this functionality will not interfere with your use of the component.</P>
-</P>The problem with unnecessary functionality is that it may be activated by the
-component itself. This can slow down the component, cause it to produce surprising
-results or, in some cases, cause serious system failures. Figure 17.9 summarizes a situation where unnecessary functionality in a reused system caused a catastrophic
-software failure.</P>
-<section>Chapter 17 Component-based software engineering</section>
-</P>The problem in the Ariane 5 launcher arose because the assumptions made about
-the software for Ariane 4 were invalid for Ariane 5. This is a general problem with
-reusable components. They are originally implemented for an application environment and, naturally, embed assumptions about that environment. These assumptions
-are rarely documented so, when the component is reused, it is impossible to derive
-tests to check if the assumptions are still valid. If you are reusing a component in a
-different environment, you may not discover the embedded environmental assumptions until you use the component in an operational system.</P>
-
-
+<script>
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+</script>
 
 </body>
+</html>

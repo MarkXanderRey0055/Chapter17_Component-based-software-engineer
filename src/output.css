@@ -44,6 +44,7 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-bounce: bounce 1s infinite;
     --default-transition-duration: 150ms;
@@ -245,6 +246,12 @@
   .table {
     display: table;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
   .animate-card-pop {
     animation: var(--animate-card-pop);
   }
@@ -254,11 +261,21 @@
   .animate-slide-in-right {
     animation: var(--animate-slide-in-right);
   }
+  .resize {
+    resize: both;
+  }
   .list-decimal {
     list-style-type: decimal;
   }
   .list-disc {
     list-style-type: disc;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .bg-mint-green {
     background-color: var(--color-mint-green);
@@ -266,12 +283,138 @@
   .text-right {
     text-align: right;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .opacity-0 {
     opacity: 0%;
   }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+}
+#eliza body {
+  margin: calc(var(--spacing) * 0);
+  background-color: #DDF4E7;
+  padding: calc(var(--spacing) * 0);
+  font-family: var(--font-sans);
+  --tw-leading: var(--leading-relaxed);
+  line-height: var(--leading-relaxed);
+  color: #124170;
+}
+#eliza header {
+  background-color: #26667F;
+  padding-inline: calc(var(--spacing) * 4);
+  padding-block: calc(var(--spacing) * 7.5);
+  text-align: center;
+  color: var(--color-white);
+}
+#eliza header h1 {
+  margin: calc(var(--spacing) * 0);
+  font-size: var(--text-4xl);
+  line-height: var(--tw-leading, var(--text-4xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  --tw-tracking: 1px;
+  letter-spacing: 1px;
+}
+#eliza .container {
+  margin-inline: auto;
+  margin-block: calc(var(--spacing) * 12);
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  gap: 25px;
+  padding: calc(var(--spacing) * 5);
+}
+#eliza .flip-card {
+  height: 320px;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  perspective: 1000;
+}
+#eliza .flip-card-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 800ms;
+  transition-duration: 800ms;
+  transform-style: preserve-3d;
+}
+#eliza .flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+#eliza .flip-card-front, #eliza .flip-card-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  border-radius: 15px;
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: #26667F;
+  background-color: var(--color-white);
+  padding: 25px;
+  --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  backface-visibility: hidden;
+}
+#eliza .flip-card-front h3, #eliza .flip-card-back h3 {
+  margin-top: calc(var(--spacing) * 0);
+  color: #124170;
+}
+#eliza .flip-card-front p, #eliza .flip-card-back p {
+  text-align: justify;
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+}
+#eliza .flip-card-back {
+  transform: rotateY(180deg);
+}
+#eliza footer {
+  margin-top: calc(var(--spacing) * 12);
+  background-color: #26667F;
+  padding-inline: 15px;
+  padding-block: 30px;
+  text-align: center;
+  color: var(--color-white);
+}
+#eliza footer h4 {
+  margin-bottom: 10px;
+}
+#eliza footer ul {
+  margin: calc(var(--spacing) * 0);
+  list-style-type: none;
+  padding: calc(var(--spacing) * 0);
+}
+#eliza footer li {
+  margin-block: 5px;
+}
+#eliza footer p {
+  margin-top: 10px;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+@media (max-width: 768px) {
+  .flip-card {
+    height: 380px;
   }
 }
 .maris {
@@ -1770,12 +1913,106 @@ body, .loyd_content, .loyd_header, .loyd_footer {
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
 }
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
   syntax: "*";
   inherits: false;
 }
@@ -1844,10 +2081,6 @@ body, .loyd_content, .loyd_header, .loyd_footer {
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-duration {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-scale-x {
   syntax: "*";
   inherits: false;
@@ -1863,10 +2096,6 @@ body, .loyd_content, .loyd_header, .loyd_footer {
   inherits: false;
   initial-value: 1;
 }
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-text-shadow-color {
   syntax: "*";
   inherits: false;
@@ -1875,26 +2104,6 @@ body, .loyd_content, .loyd_header, .loyd_footer {
   syntax: "<percentage>";
   inherits: false;
   initial-value: 100%;
-}
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -1910,19 +2119,6 @@ body, .loyd_content, .loyd_header, .loyd_footer {
   syntax: "*";
   inherits: false;
   initial-value: 0;
-}
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-ease {
-  syntax: "*";
-  inherits: false;
 }
 @property --tw-gradient-position {
   syntax: "*";
@@ -1992,8 +2188,31 @@ body, .loyd_content, .loyd_header, .loyd_footer {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+      --tw-border-style: solid;
       --tw-outline-style: solid;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-ease: initial;
+      --tw-leading: initial;
       --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-duration: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
@@ -2008,24 +2227,14 @@ body, .loyd_content, .loyd_header, .loyd_footer {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-duration: initial;
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
-      --tw-tracking: initial;
       --tw-text-shadow-color: initial;
       --tw-text-shadow-alpha: 100%;
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
-      --tw-leading: initial;
-      --tw-border-style: solid;
-      --tw-ease: initial;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
       --tw-gradient-via: #0000;

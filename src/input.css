@@ -3,6 +3,81 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 @import "tailwindcss";
 
+#eliza body{
+     @apply m-0 p-0 leading-relaxed text-[#124170] bg-[#DDF4E7] font-sans;
+}
+
+#eliza header{
+    @apply bg-[#26667F] text-white text-center px-4 py-7.5;
+}
+
+#eliza header h1 {
+  @apply text-4xl m-0 font-bold tracking-[1px];
+}
+
+#eliza .container {
+  @apply mx-auto my-12 p-5 grid gap-[25px] max-w-[1000px] [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))];
+}
+
+#eliza .flip-card {
+  @apply w-full cursor-pointer bg-transparent h-[320px] perspective-[1000];
+}
+
+#eliza .flip-card-inner {
+  @apply relative w-full h-full rounded-[15px] transition-transform duration-800 transition-transform duration-[800ms];
+  transform-style: preserve-3d;
+}
+
+#eliza .flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+#eliza .flip-card-front,
+#eliza .flip-card-back {
+  @apply absolute w-full h-full rounded-[15px] bg-white border border-[#26667F] shadow-md p-[25px] overflow-y-auto;
+  backface-visibility: hidden;
+}
+
+#eliza .flip-card-front h3,
+#eliza .flip-card-back h3 {
+  @apply text-[#124170] mt-0;
+}
+
+#eliza .flip-card-front p,
+#eliza .flip-card-back p {
+  @apply text-base text-justify;
+}
+
+#eliza .flip-card-back {
+  transform: rotateY(180deg);
+}
+
+#eliza footer {
+  @apply bg-[#26667F] text-white text-center mt-12 px-[15px] py-[30px];
+}
+
+#eliza footer h4 {
+  @apply mb-[10px];
+}
+
+#eliza footer ul {
+  @apply list-none m-0 p-0;
+}
+
+#eliza footer li {
+  @apply my-[5px];
+}
+
+#eliza footer p {
+  @apply mt-[10px] font-bold;
+}
+
+@media (max-width: 768px) {
+  .flip-card {
+    height: 380px;
+  }
+}
+
 .maris{
    @apply  bg-[#26667F] text-black text-center font-bold py-2 rounded-t-md shadow-sm transition-all duration-300 hover:bg-[#3E8E9F] hover:scale-105 animate-bounce;
 }
